@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Twowh">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.128048360692752 0.343596386681778 0.0901283795092337"
+        rpy="0 0 0" />
+      <mass
+        value="0.573840000000001" />
+      <inertia
+        ixx="0.00576017238000001"
+        ixy="9.82289890103124E-18"
+        ixz="-2.17978635019974E-18"
+        iyy="0.015701046"
+        iyz="-4.58064054923378E-21"
+        izz="0.00994173438000003" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Twowh/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Twowh/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Body">
+    <inertial>
+      <origin
+        xyz="0.21508 0.00243 -0.2779"
+        rpy="0 0 0" />
+      <mass
+        value="2.263" />
+      <inertia
+        ixx="0.023609"
+        ixy="3.2969E-08"
+        ixz="-1.5185E-18"
+        iyy="0.042498"
+        iyz="1.2741E-05"
+        izz="0.01919" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Twowh/meshes/Body.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Twowh/meshes/Body.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Fix"
+    type="fixed">
+    <origin
+      xyz="-0.087202 -0.39013 0.3271"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Body" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="Front_wheel">
+    <inertial>
+      <origin
+        xyz="0.022014 0.0019731 0.11577"
+        rpy="0 0 0" />
+      <mass
+        value="0.26479" />
+      <inertia
+        ixx="0.00034075"
+        ixy="5.0752E-08"
+        ixz="-2.7225E-08"
+        iyy="0.00021306"
+        iyz="1.2729E-05"
+        izz="0.00018091" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Twowh/meshes/Front_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Twowh/meshes/Front_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="F_join"
+    type="revolute">
+    <origin
+      xyz="0.10691 -0.26713 0.2906"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Front_wheel" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="L_wheel">
+    <inertial>
+      <origin
+        xyz="1.24582793650796E-05 0.0113047047114155 -0.0364186400276829"
+        rpy="0 0 0" />
+      <mass
+        value="0.234499143777188" />
+      <inertia
+        ixx="0.000148295988742398"
+        ixy="-6.74096165582027E-09"
+        ixz="2.98968224739169E-08"
+        iyy="0.000143655369595773"
+        iyz="1.49218895971985E-07"
+        izz="0.000262556797814612" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Twowh/meshes/L_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.298039215686275 0.298039215686275 0.298039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Twowh/meshes/L_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_joint"
+    type="revolute">
+    <origin
+      xyz="-0.099202 0.050172 0.2903"
+      rpy="0 1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="L_wheel" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="R_wheel">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Twowh/meshes/R_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Twowh/meshes/R_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_joint"
+    type="revolute">
+    <origin
+      xyz="0.3548 0.050172 0.2903"
+      rpy="3.1416 -1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="R_wheel" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>
